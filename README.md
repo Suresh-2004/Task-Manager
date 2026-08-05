@@ -65,40 +65,38 @@ This project was developed to learn Java Full Stack development using Spring Boo
 ## Project Structure
 
 Task_Manager
-│
-├── backend
-│   ├── Controller
-│   ├── Service
-│   ├── Repository
-│   ├── Entity
-│   ├── Security
-│   ├── Config
-│   └── Resources
-│
-└── frontend
-├── components
-├── api.js
-├── App.js
-├── app.css
-└── index.js
+
+backend
+* Controller
+* Service
+* Repository
+* Entity
+* Security
+* Config
+* Resources
+
+
+frontend
+* components
+* api.js
+* App.js
+* app.css
+* index.js
+
+
+
+
 
 ## Application Flow
 
-React Frontend
-↓
-Axios
-↓
-Spring Boot Controller
-↓
-Service
-↓
-Repository
-↓
-MySQL Database
-↓
-Response
-↓
-React UI
+* React Frontend
+* Axios
+* Spring Boot Controller
+* Service
+* Repository
+* MySQL Database
+* Response
+* React UI
 
 ## Modules
 
@@ -131,51 +129,25 @@ React UI
 
 ### Authentication APIs
 
-**POST** `/api/auth/register` - Register User
-
-
-**POST** `/api/auth/login` - Login User
-
-
+* POST /api/auth/register : Register User
+* POST /api/auth/login : Login User
 
 ### Task APIs
 
-**GET** `/api/tasks` - Get All Tasks
-
-
-**POST** `/api/tasks` - Create Task
-
-
-**GET** `/api/tasks/{id}` - Get Task By Id
-
-
-**PUT** `/api/tasks/{id}` - Update Task
-
-
-**DELETE** `/api/tasks/{id}` - Delete Task
-
-
-**PUT** `/api/tasks/{id}/complete` - Complete Task
-
-
+* GET /api/tasks : Get All Tasks
+* POST /api/tasks : Create Task
+* GET /api/tasks/{id} : Get Task By Id
+* PUT /api/tasks/{id} : Update Task
+* DELETE /api/tasks/{id} : Delete Task
+* PUT /api/tasks/{id}/complete : Complete Task
 
 ### Search and Filter APIs
 
-**GET** `/api/tasks/search`
-
-
-**GET** `/api/tasks/status`
-
-
-**GET** `/api/tasks/priority`
-
-
-**GET** `/api/tasks/sort`
-
-
-**GET** `/api/tasks/dashboard`
-
-
+* GET /api/tasks/search
+* GET /api/tasks/status
+* GET /api/tasks/priority
+* GET /api/tasks/sort
+* GET /api/tasks/dashboard
 
 ## Database
 
@@ -200,25 +172,23 @@ React UI
 
 ### Backend
 
-1. Open backend project in IntelliJ IDEA.
-2. Create MySQL database named: task_manager_db
-3. Update database username and password inside: application.properties
-4. Run: BackendApplication.java
-
-Backend runs on: http://localhost:8080
+* Open backend project in IntelliJ IDEA
+* Create MySQL database named: task_manager_db
+* Update database username and password inside: application.properties
+* Run: BackendApplication.java
+* Backend runs on: http://localhost:8080
 
 ### Frontend
 
-1. Open your terminal.
-2. Go to frontend folder: `cd frontend`
-3. Install packages: `npm install`
-4. Run React project: `npm start`
-
-Frontend runs on: http://localhost:3000
+* Open your terminal
+* Go to frontend folder: cd frontend
+* Install packages: npm install
+* Run React project: npm start
+* Frontend runs on: http://localhost:3000
 
 ## Swagger
 
-Swagger URL: http://localhost:8080/swagger-ui/index.html
+* Swagger URL: http://localhost:8080/swagger-ui/index.html
 
 ## Future Improvements
 
@@ -249,6 +219,4 @@ This project helped me understand:
 * Frontend and Backend Communication
 
 ## Author
-
-**Suresh Kumar**
-Java Full Stack Developer
+Suresh Kumar
