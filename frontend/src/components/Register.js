@@ -1,19 +1,19 @@
 import { useState } from "react";
-import { loginUser } from "../api";
+import { registerUser } from "../api";
 
-// this is the login component
-function Login({ setLoggedIn }) {
+// this is the register component
+function Register() {
 
     const [username, setUsername] = useState("");
 
     const [password, setPassword] = useState("");
 
-    // for success or error messages
+    // shows success or error message
     const [message, setMessage] = useState("");
 
-    function handleLogin(event) {
+    function handleRegister(event) {
 
-        // stop the page from refreshing when we click submit
+        // stop page refresh
         event.preventDefault();
 
         const user = {
@@ -21,24 +21,32 @@ function Login({ setLoggedIn }) {
             password: password
         };
 
-        // calling the backend api here
-        loginUser(user)
+        // call backend register api
+        registerUser(user)
 
             .then(function (response) {
 
-                // saving token to local storage so we stay logged in
-                localStorage.setItem("token", response.data.token);
+                setMessage(response.data);
 
-                setMessage("Login Successful");
+                setUsername("");
 
-                setLoggedIn(true);
+                setPassword("");
 
             })
 
-            .catch(function () {
+            .catch(function (error) {
 
-                // error handling
-                setMessage("Invalid Username or Password");
+                console.log(error);
+
+                if (error.response) {
+
+                    setMessage(error.response.data);
+
+                } else {
+
+                    setMessage("Registration Failed");
+
+                }
 
             });
 
@@ -48,9 +56,9 @@ function Login({ setLoggedIn }) {
 
         <div className="card">
 
-            <h2>Login</h2>
+            <h2>Register</h2>
 
-            <form onSubmit={handleLogin}>
+            <form onSubmit={handleRegister}>
 
                 <input
                     type="text"
@@ -74,7 +82,7 @@ function Login({ setLoggedIn }) {
 
                 <button type="submit">
 
-                    Login
+                    Register
 
                 </button>
 
@@ -92,4 +100,4 @@ function Login({ setLoggedIn }) {
 
 }
 
-export default Login;
+export default Register;
